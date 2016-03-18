@@ -1,6 +1,9 @@
-<?php include '/../style/template.php';?>
-
-
+<?php include '/style/template.php';
+   include '../controller/MusicasController.php'; 
+   $musicaControl = new MusicasController();
+?>
+<!--<link href="../style/css/bootstrap.css" rel="stylesheet">-->
+    
 <div class="col-sm-10 col-sm-offset-1">
     <h3>Musicas</h3>
     <table class="table table-striped">
@@ -9,10 +12,12 @@
             <td>nome</td>
             <td>autor_id</td>
         </tr>
+    <?php foreach($musicaControl->listar() as $value){ ?>
         <tr>
             <td>1</td>
-            <td>Musica1</td>
-            <td>10</td>
+            <td><?php echo  $value->nome;?></td>
+            <td><?php echo  $value->autor_id; ?></td>
         </tr>
+    <?php }?>    
     </table>
 </div>
