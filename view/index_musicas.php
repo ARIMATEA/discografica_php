@@ -15,7 +15,7 @@
     <?php foreach($musicaControl->listar() as $value){ ?>
         <tr>
             <td>1</td>
-            <td><?php echo  $value->nome;?></td>
+            <td><?php echo  $value->titulo;?></td>
             <td><?php echo  $value->autor_id; ?></td>
         </tr>
     <?php }?>    
