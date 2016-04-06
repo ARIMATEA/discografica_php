@@ -62,5 +62,27 @@ class Musica {
         return $query->fetchAll();
     }
     
+    public function find($id = null){
+        $sql = "SELECT musica.*, autor.nome as nome_autor FROM musicas "
+                . "musica INNER JOIN "
+                . "autores autor ON (autor.id = musica.autor_id) WHERE musica.id = :id";
+        $query = Conexao::prepare($sql);
+        $query->bindValue(":id" , $id);
+        $query->execute();
+        return $query->fetch();
+    }
+    
+    public function update($id = null){
+        $sql = "UPDATE musicas "
+                . " SET titulo = :titulo, autor_id = :autor_id , midia_id = :midia_id "
+                . "where id = :id";
+        $query = Conexao::prepare($sql);
+        $query->bindValue(":titulo" , $this->getTitulo());
+        $query->bindValue(":autor_id" , $this->getAutor_id());
+        $query->bindValue(":midia_id", $this->getMidia_id());
+        $query->bindValue(":id", $id);
+        $query->execute();   
+    }
+    
     
 }

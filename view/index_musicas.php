@@ -20,7 +20,7 @@
             <td><?php echo $value->id;?></td>
             <td><?php echo $value->titulo;?></td>
             <td><?php echo $value->nome_autor; ?></td>
-            <td> <a class="btn btn-primary btn-xs" href="editar_musica.php">editar</a> |
+            <td> <?php echo "<a href='editar_musica.php?acao=atualizar&id=".$value->id."'>editar</a>" ?> |
                 <a href="">deletar</a> </td>
         </tr>
     <?php }?>    
