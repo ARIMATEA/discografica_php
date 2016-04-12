@@ -84,5 +84,11 @@ class Musica {
         $query->execute();   
     }
     
+    public function delete($id){
+        $sql = "delete from musicas where id = :id";
+        $query = Conexao::prepare($sql);
+        $query->bindValue(":id", $id);
+        $query->execute();   
+    }
     
 }

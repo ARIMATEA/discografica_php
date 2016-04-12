@@ -1,6 +1,11 @@
 <?php include '/style/template.php';
    include '../controller/MusicasController.php'; 
    $musicaControl = new MusicasController();
+   if(isset($_GET['id'])){
+      $id = $_GET['id'];
+      $musicaControl->deletarControl($id);
+      header('location: index_musicas.php');
+   }
 ?>
 <!--<link href="../style/css/bootstrap.css" rel="stylesheet">-->
     
@@ -21,7 +26,7 @@
             <td><?php echo $value->titulo;?></td>
             <td><?php echo $value->nome_autor; ?></td>
             <td> <?php echo "<a href='editar_musica.php?acao=atualizar&id=".$value->id."'>editar</a>" ?> |
-                <a href="">deletar</a> </td>
+                <?php echo "<a href='index_musicas.php?acao=deletar&id=".$value->id."'>deletar</a>" ?> </td>
         </tr>
     <?php }?>    
     </table>
