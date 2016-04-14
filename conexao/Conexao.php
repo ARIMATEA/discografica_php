@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+include_once 'config.php';
 class Conexao{
 	private static $instance;
 	public static function getInstance(){

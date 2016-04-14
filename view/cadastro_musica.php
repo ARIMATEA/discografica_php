@@ -1,4 +1,6 @@
-<?php include '/style/template.php' ; 
+<?php
+session_start();
+include '/style/template.php' ; 
       include '../controller/MusicasController.php';  
       $musicaControl = new MusicasController();
 ?>
@@ -9,6 +11,10 @@
     }else{
         
     }
+?>
+
+<?php 
+    echo $_SESSION['nome'];
 ?>
 <div class="col-sm-12 col-sm-offset-1">
     <div style="

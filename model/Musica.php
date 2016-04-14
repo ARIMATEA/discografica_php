@@ -1,5 +1,5 @@
 <?php
-include '../conexao/Conexao.php';
+include_once '../conexao/Conexao.php';
 class Musica {
     private $id;
     private $titulo;

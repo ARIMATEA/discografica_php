@@ -1,3 +1,7 @@
+<?php include_once  '../controller/UsuariosController.php';
+       $userCtrl = new UsuariosController();
+       $userCtrl->verifica();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,10 +19,10 @@
   <body>  
       
       <?php 
-       $session = 1; 
-       if($session == null){
+       if(isset($_SESSION['email'])){
+           include 'menu.php'; 
        }else{
-         include 'menu.php';  
+          
        }
       ?>
       

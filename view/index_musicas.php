@@ -1,4 +1,6 @@
-<?php include '/style/template.php';
+<?php
+session_start();
+include '/style/template.php';
    include '../controller/MusicasController.php'; 
    $musicaControl = new MusicasController();
    if(isset($_GET['id'])){
@@ -6,9 +8,12 @@
       $musicaControl->deletarControl($id);
       header('location: index_musicas.php');
    }
+   echo $_SESSION['email'];
 ?>
 <!--<link href="../style/css/bootstrap.css" rel="stylesheet">-->
-    
+   
+
+
 <div class="col-sm-10 col-sm-offset-1">
     <a href="cadastro_musica.php" class="btn btn-success pull-right btn-xs" >adicionar</a>
     <h3>Musicas</h3>

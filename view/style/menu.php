@@ -1,3 +1,10 @@
+<?php include_once  '../controller/UsuariosController.php';
+        $userCtrl = new UsuariosController();
+        
+        if(isset($_POST['sair'])){
+            $userCtrl->logoff();
+        }
+?>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,7 +51,10 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><form method="POST" class="navbar-form navbar-left" role="search">
+                    <input type="submit" name="sair" class="btn btn-default" value="sair">
+               </form>
+            </li>
           </ul>
         </li>
       </ul>
