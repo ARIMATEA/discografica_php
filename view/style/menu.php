@@ -51,7 +51,7 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><form method="POST" class="navbar-form navbar-left" role="search">
+            <li><form method="POST" class="navbar-form navbar-left">
                     <input type="submit" name="sair" class="btn btn-default" value="sair">
                </form>
             </li>
